@@ -81,7 +81,7 @@
         <div class="card">
             <div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
             <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
-            <form action="/deleteStudent" method="post">
+            <form action="/deleteStudent" method="get">
                 <input type="hidden" name="_method" value="delete">
                 <div class="form-group">
                     <label for="studentId">Enter the Student ID</label>
