@@ -90,21 +90,19 @@ public class StudentController
 		}
 	}
 	
-	@DeleteMapping("/deleteStudent")
-	public String delete( @RequestParam("kodId") String kodId,RedirectAttributes res) {
-		try {
-			//---------------------------
-			ss.getStudent(kodId);
-			String deleteStudent = ss.deleteStudent(kodId);
-			res.addFlashAttribute("success", "Student with ID ["+kodId+"] is Deleted Successfully!!");
-			return "redirect:/show";
-			//----------------------------+
-		}
-		catch (Exception e) {
-			// TODO: handle exception
-			res.addFlashAttribute("error", "Student Not Found With ID ["+kodId+"]");
-			return "redirect:/remove";
-		}
+	@GetMapping("/deleteStudent")
+public String delete(@RequestParam("kodId") String kodId, RedirectAttributes res) {
+    try {
+        ss.getStudent(kodId);
+        ss.deleteStudent(kodId);
+        res.addFlashAttribute("success", "Student with ID ["+kodId+"] is Deleted Successfully!!");
+        return "redirect:/show";
+    }
+    catch (Exception e) {
+        res.addFlashAttribute("error", "Student Not Found With ID ["+kodId+"]");
+        return "redirect:/remove";
+    }
+}
 		
 	}
 
