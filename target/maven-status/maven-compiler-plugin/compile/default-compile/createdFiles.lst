@@ -1,0 +1,7 @@
+com\CRUDStudentDB\Application.class
+com\CRUDStudentDB\Services\StudentServicesImplementation.class
+com\CRUDStudentDB\Controller\StudentController.class
+com\CRUDStudentDB\Services\StudentServices.class
+com\CRUDStudentDB\Entity\Student.class
+com\CRUDStudentDB\Controller\WeBController.class
+com\CRUDStudentDB\Repository\StudentRepositry.class

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Invalid Input</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+            border: 2px solid #dc3545;
+            border-radius: 50%;
+        }
+
+        .jumbotron {
+            background-color: #f8d7da;
+            border: 2px solid #dc3545;
+            padding: 2rem;
+        }
+
+        h1.display-4 {
+            color: #dc3545;
+        }
+
+        p.lead {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img class="border border-danger" src="studentlogo.jpg"
+                                              style="height: 5pc;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="viewInfo">View</a></li>
+                <li class="nav-item"><a class="nav-link" href="register">Add</a></li>
+                <li class="nav-item"><a class="nav-link" href="updateInfo">Update</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="jumbotron jumbotron-fluid border border-danger mt-5 ml-5 mr-5 text-center">
+    <div class="container">
+        <h1 class="display-4">No Such Student </h1>
+        <p class="lead"><sup style="color: red;">*</sup>Please Check your Student Id because there is no student with entered Student Id</p>
+    </div>
+</div>
+</body>
+</html>
