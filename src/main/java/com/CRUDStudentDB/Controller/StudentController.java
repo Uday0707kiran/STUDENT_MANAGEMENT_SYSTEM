@@ -63,7 +63,7 @@ public class StudentController
 			return "redirect:/viewInfo";
 		}
 	}
-	@GetMapping("/show")
+	@PostMapping("/show")
 	public String getAllStudent(Model model) 
 	{
 		List<Student> listStudent=ss.getAllStudent();
