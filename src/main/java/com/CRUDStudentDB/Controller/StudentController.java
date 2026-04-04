@@ -40,7 +40,7 @@ public class StudentController
 			res.addFlashAttribute("success", "Student Added Successfull!!");
 			return "redirect:/";
 		}else {
-			res.addFlashAttribute("error", "Already Student Present with ID "+"["+kodId+"]");
+			res.addFlashAttribute("error", "Already Student Present with ID "+""+kodId+"");
 			return "redirect:/register";
 		}
 		
@@ -59,11 +59,11 @@ public class StudentController
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			res.addFlashAttribute("error", "Student Not Found with ID ["+kodId+"]");
+			res.addFlashAttribute("error", "Student Not Found with ID "+kodId+"");
 			return "redirect:/viewInfo";
 		}
 	}
-	@PostMapping("/show")
+	@GetMapping("/show")
 	public String getAllStudent(Model model) 
 	{
 		List<Student> listStudent=ss.getAllStudent();
@@ -72,7 +72,7 @@ public class StudentController
 		return "showAllData";
 	}
 	
-	@PutMapping("/u")
+	@PutMapping("/updateStudent")
 	public String updateStudent(@RequestParam("kodId")String kodId,@RequestParam("name") String name,@RequestParam("branch") String branch,RedirectAttributes res ) 
 	{
 		try {
@@ -80,29 +80,31 @@ public class StudentController
 		s.setName(name);
 		s.setBranch(branch);
 		ss.updateStudent(s);
-		res.addFlashAttribute("success", "Student UpDate Successfull!!");
+		res.addFlashAttribute("success", "Student Updated Successfully!!");
 		return "redirect:/";
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			res.addFlashAttribute("error", "Student Not Found with ID ["+kodId+"]");
+			res.addFlashAttribute("error", "Student Not Found with ID "+kodId+"");
 			return "redirect:/updateInfo";
 		}
 	}
 	
-	@GetMapping("/deleteStudent")
-public String delete(@RequestParam("kodId") String kodId, RedirectAttributes res) {
-    try {
-        ss.getStudent(kodId);
-        ss.deleteStudent(kodId);
-        res.addFlashAttribute("success", "Student with ID ["+kodId+"] is Deleted Successfully!!");
-        return "redirect:/show";
-    }
-    catch (Exception e) {
-        res.addFlashAttribute("error", "Student Not Found With ID ["+kodId+"]");
-        return "redirect:/remove";
-    }
-}
+	@DeleteMapping("/deleteStudent")
+	public String delete( @RequestParam("kodId") String kodId,RedirectAttributes res) {
+		try {
+			//---------------------------
+			ss.getStudent(kodId);
+			String deleteStudent = ss.deleteStudent(kodId);
+			res.addFlashAttribute("success", "Student with ID "+kodId+" is Deleted Successfully!!");
+			return "redirect:/show";
+			//----------------------------+
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			res.addFlashAttribute("error", "Student Not Found With ID "+kodId+"");
+			return "redirect:/remove";
+		}
 		
 	}
 
