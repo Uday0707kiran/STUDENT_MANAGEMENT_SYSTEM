@@ -1,9 +1,9 @@
-target/
+target/*
+!target/*.jar
 bin/
 node_modules/
 .classpath
 .project
 .settings/
 *.log
-*.jar
 *.war
